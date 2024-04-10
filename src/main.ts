@@ -2,7 +2,8 @@
 // import "./clean-code/05-dry";
 // import "./clean-code/06-clases-c";
 // import "./clean-code/07-tarea";
-import "./code-smells/01-singleton.js";
+// import "./code-smells/01-singleton.js";
+import "./code-smells/02-low-coupling.js";
 import "./style.css";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;

@@ -5,18 +5,21 @@
   type Gender = "M" | "F";
 
   interface PersonProps {
-    name: string;
+    lastName: string;
+    firstName: string;
     gender: Gender;
     birthdate: Date;
   }
 
   class Person {
-    public name: string;
+    public lastName: string;
+    public firstName: string;
     public gender: Gender;
     public birthdate: Date;
 
-    constructor({ name, gender, birthdate }: PersonProps) {
-      this.name = name;
+    constructor({ lastName, firstName, gender, birthdate }: PersonProps) {
+      this.lastName = lastName;
+      this.firstName = firstName;
       this.gender = gender;
       this.birthdate = birthdate;
     }
@@ -63,7 +66,8 @@
     email: string;
     gender: Gender;
     lastFolderOpen: string;
-    name: string;
+    lastName: string;
+    firstName: string;
     role: string;
     workingDirectory: string;
   }
@@ -79,7 +83,8 @@
     public settings: Settings;
 
     constructor({
-      name,
+      lastName,
+      firstName,
       gender,
       birthdate,
       email,
@@ -87,7 +92,7 @@
       workingDirectory,
       lastFolderOpen,
     }: UserSettingsProps) {
-      this.person = new Person({ name, gender, birthdate });
+      this.person = new Person({ lastName, firstName, gender, birthdate });
       this.user = new User({ email, role });
       this.settings = new Settings({ workingDirectory, lastFolderOpen });
     }
@@ -96,9 +101,10 @@
   const userSettings = new UserSettings({
     birthdate: new Date("1985-10-21"),
     email: "fernando@google.com",
-    gender: "M",
+    gender: "F",
     lastFolderOpen: "/home",
-    name: "Fernando",
+    firstName: "Patri",
+    lastName: "Manz",
     role: "Admin",
     workingDirectory: "/usr/home",
   });
