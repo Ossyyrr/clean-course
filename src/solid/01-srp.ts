@@ -27,13 +27,24 @@
   // Usualmente, esto es una clase para controlar la vista que es desplegada al usuario
   // Recuerden que podemos tener muchas vistas que realicen este mismo trabajo.
   class ProductBloc {
+    private productService: ProductService;
+    private mailer: Mailer;
+
+    constructor(productService: ProductService, mailer: Mailer) {
+      this.productService = productService;
+      this.mailer = mailer;
+    }
+
     loadProduct(id: number) {
-      // Realiza un proceso para obtener el producto y retornarlo
-      console.log("Producto: ", { id, name: "OLED Tv" });
+      this.productService.getProduct(id);
+    }
+
+    saveProduct(product: Product) {
+      this.productService.saveProduct(product);
     }
 
     notifyClients() {
-      console.log("Enviando correo a los clientes");
+      this.mailer.sendEmail(["ossyyrr@gmail.com"], "to-clients");
     }
   }
 
