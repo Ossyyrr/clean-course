@@ -4,7 +4,8 @@
 // import "./clean-code/07-tarea";
 // import "./code-smells/01-singleton.js";
 // import "./code-smells/02-low-coupling.js";
-import "./solid/01-srp";
+// import "./solid/01-srp";
+import "./solid/02-open-close-a";
 import "./style.css";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
