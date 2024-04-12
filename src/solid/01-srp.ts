@@ -23,9 +23,6 @@
       console.log("Enviando correo a los clientes", template);
     }
   }
-
-  // Usualmente, esto es una clase para controlar la vista que es desplegada al usuario
-  // Recuerden que podemos tener muchas vistas que realicen este mismo trabajo.
   class ProductBloc {
     private productService: ProductService;
     private mailer: Mailer;
@@ -56,9 +53,11 @@
     }
   }
 
-  const productBloc = new ProductBloc();
-  const cardBloc = new CartBloc();
   const productService = new ProductService();
+  const mailer = new Mailer();
+
+  const productBloc = new ProductBloc(productService, mailer);
+  const cardBloc = new CartBloc();
 
   productBloc.loadProduct(10);
   productService.saveProduct({ id: 10, name: "OLED TV" });
